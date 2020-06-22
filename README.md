@@ -2,8 +2,9 @@
 
 Solving Project Euler problems in the Rust programming language!
 
-See: <https://projecteuler.net/>
-And: <https://www.rust-lang.org>
+Project Euler website: <https://projecteuler.net>
+
+Rust programming language website: <https://www.rust-lang.org>
 
 ## Setup
 
