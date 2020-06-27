@@ -18,6 +18,30 @@
 // What is the value of the first triangle number to have over five hundred divisors?
 //
 
+fn get_num_divisors(n: i64) -> i64 {
+    let sqrt = (n as f64).sqrt() as i64;
+    let mut num_divisors = 0;
+    for divisor in 1..(sqrt + 1) {
+        if n % divisor == 0 {
+            num_divisors += if divisor == sqrt { 1 } else { 2 }
+        }
+    }
+    return num_divisors;
+}
+
 pub fn run() {
-    // TODO: find an efficient solution!
+    let n = 500;
+
+    let mut triangle_number = 0;
+
+    let mut i = 0;
+    loop {
+        i += 1;
+        triangle_number += i;
+        if get_num_divisors(triangle_number) > n {
+            break;
+        }
+    }
+
+    println!("Triangle number: {}", triangle_number);
 }

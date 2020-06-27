@@ -20,5 +20,11 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 cargo run 1 v1
 ```
 
+Or, optimized build and run:
+
+```
+cargo build --release && ./target/release/projecteuler 1 v1
+```
+
 See usage explained in `display_usage` function of `src/main.rs` file.
 Note that this main file must be updated when adding new problems.
