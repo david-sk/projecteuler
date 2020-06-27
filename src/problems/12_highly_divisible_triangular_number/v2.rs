@@ -32,15 +32,12 @@ fn get_num_divisors(n: i64) -> i64 {
 pub fn run() {
     let n = 500;
 
-    let mut triangle_number = 0;
+    let mut triangle_number = 1;
 
-    let mut i = 0;
-    loop {
+    let mut i = 1;
+    while get_num_divisors(triangle_number) < n {
         i += 1;
         triangle_number += i;
-        if get_num_divisors(triangle_number) > n {
-            break;
-        }
     }
 
     println!("Triangle number: {}", triangle_number);
