@@ -19,11 +19,11 @@
 //
 
 fn get_num_divisors(n: i64) -> i64 {
-    let sqrt = (n as f64).sqrt() as i64;
     let mut num_divisors = 0;
-    for divisor in 1..(sqrt + 1) {
-        if n % divisor == 0 {
-            num_divisors += if divisor == sqrt { 1 } else { 2 }
+    let sqrt = (n as f64).sqrt() as i64;
+    for i in 1..(sqrt + 1) {
+        if n % i == 0 {
+            num_divisors += if i == sqrt { 1 } else { 2 }
         }
     }
     return num_divisors;
