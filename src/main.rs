@@ -37,6 +37,8 @@ mod problem_12_v2;
 mod problem_13_v1;
 #[path = "problems/14_longest_collatz_sequence/v1.rs"]
 mod problem_14_v1;
+#[path = "problems/14_longest_collatz_sequence/v2.rs"]
+mod problem_14_v2;
 
 use std::env;
 use std::time::Instant;
@@ -73,6 +75,7 @@ fn main() {
         ("12", "v2") => problem_12_v2::run(),
         ("13", "v1") => problem_13_v1::run(),
         ("14", "v1") => problem_14_v1::run(),
+        ("14", "v2") => problem_14_v2::run(),
         _ => display_usage(),
     }
     let elapsed = now.elapsed();
