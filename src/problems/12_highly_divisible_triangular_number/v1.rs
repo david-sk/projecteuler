@@ -34,7 +34,7 @@ pub fn run() {
     let mut triangle_number = 1;
 
     let mut i = 1;
-    while get_num_divisors(triangle_number) < n {
+    while get_num_divisors(triangle_number) <= n {
         i += 1;
         triangle_number += i;
     }
