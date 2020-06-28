@@ -33,6 +33,8 @@ mod problem_11_v1;
 mod problem_12_v1;
 #[path = "problems/12_highly_divisible_triangular_number/v2.rs"]
 mod problem_12_v2;
+#[path = "problems/13_large_sum/v1.rs"]
+mod problem_13_v1;
 
 use std::env;
 use std::time::Instant;
@@ -67,6 +69,7 @@ fn main() {
         ("11", "v1") => problem_11_v1::run(),
         ("12", "v1") => problem_12_v1::run(),
         ("12", "v2") => problem_12_v2::run(),
+        ("13", "v1") => problem_13_v1::run(),
         _ => display_usage(),
     }
     let elapsed = now.elapsed();
