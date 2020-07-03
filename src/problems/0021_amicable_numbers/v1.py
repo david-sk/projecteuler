@@ -13,7 +13,7 @@
 
 
 def get_proper_divisors_sum(n):
-    return sum(i + n / i for i in range(1, int(n ** 0.5) + 1) if n % i == 0) - n
+    return sum(i + n // i for i in range(1, int(n ** 0.5) + 1) if n % i == 0) - n
 
 
 def run():
