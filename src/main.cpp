@@ -4,6 +4,7 @@
 
 #include "problems/0001_multiples_of_3_and_5/v1.hpp"
 #include "problems/0002_even_fibonacci_numbers/v1.hpp"
+#include "problems/0023_non_abundant_sums/v1.hpp"
 
 using namespace std;
 
@@ -34,6 +35,8 @@ int main(int argc, char *argv[]) {
         Problem_1_V1::run();
     } else if (problemNumber == "2" && problemVersion == "v1") {
         Problem_2_V1::run();
+    } else if (problemNumber == "23" && problemVersion == "v1") {
+        Problem_23_V1::run();
     } else {
         displayUsage();
     }
