@@ -21,9 +21,11 @@
 # What is the index of the first term in the Fibonacci sequence to contain 1000 digits?
 #
 
+from math import log10
+
 
 def run():
     index, a, b = 2, 1, 1
-    while len(str(b)) < 1000:
+    while log10(b) < 1000:
         index, a, b = index + 1, b, b + a
     print('Index: ', index)
