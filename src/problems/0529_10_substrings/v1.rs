@@ -15,9 +15,11 @@
 // Find T(10^18) mod 1 000 000 007.
 //
 
+// TODO: trying stuff here, need to find a proper solution
+
 fn checks(n: i64) -> bool {
-    let value_of_sum: i64 = 10;
-    let mut n_string = n.to_string();
+    // let value_of_sum: i64 = 10; // FIXME: make use of it???
+    let n_string = n.to_string();
 
     let mut start = 1;
     let mut sum = n_string[0..1].parse::<i64>().unwrap();

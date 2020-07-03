@@ -2,46 +2,45 @@
 // Entry point. Usage is explained in `display_usage` function.
 //
 
-#[path = "problems/1_multiples_of_3_and_5/v1.rs"]
+#[path = "problems/0001_multiples_of_3_and_5/v1.rs"]
 mod problem_1_v1;
-#[path = "problems/1_multiples_of_3_and_5/v2.rs"]
+#[path = "problems/0001_multiples_of_3_and_5/v2.rs"]
 mod problem_1_v2;
-#[path = "problems/2_even_fibonacci_numbers/v1.rs"]
+#[path = "problems/0002_even_fibonacci_numbers/v1.rs"]
 mod problem_2_v1;
-#[path = "problems/3_largest_prime_factor/v1.rs"]
+#[path = "problems/0003_largest_prime_factor/v1.rs"]
 mod problem_3_v1;
-#[path = "problems/4_largest_palindrome_product/v1.rs"]
+#[path = "problems/0004_largest_palindrome_product/v1.rs"]
 mod problem_4_v1;
-#[path = "problems/4_largest_palindrome_product/v2.rs"]
+#[path = "problems/0004_largest_palindrome_product/v2.rs"]
 mod problem_4_v2;
-#[path = "problems/5_smallest_multiple/v1.rs"]
+#[path = "problems/0005_smallest_multiple/v1.rs"]
 mod problem_5_v1;
-#[path = "problems/6_sum_square_difference/v1.rs"]
+#[path = "problems/0006_sum_square_difference/v1.rs"]
 mod problem_6_v1;
-#[path = "problems/7_10001st_prime/v1.rs"]
+#[path = "problems/0007_10001st_prime/v1.rs"]
 mod problem_7_v1;
-#[path = "problems/8_largest_product_in_a_series/v1.rs"]
+#[path = "problems/0008_largest_product_in_a_series/v1.rs"]
 mod problem_8_v1;
-#[path = "problems/9_special_pythagorean_triplet/v1.rs"]
+#[path = "problems/0009_special_pythagorean_triplet/v1.rs"]
 mod problem_9_v1;
 
-#[path = "problems/10_summation_of_primes/v1.rs"]
+#[path = "problems/0010_summation_of_primes/v1.rs"]
 mod problem_10_v1;
-#[path = "problems/11_largest_product_in_a_grid/v1.rs"]
+#[path = "problems/0011_largest_product_in_a_grid/v1.rs"]
 mod problem_11_v1;
-#[path = "problems/12_highly_divisible_triangular_number/v1.rs"]
+#[path = "problems/0012_highly_divisible_triangular_number/v1.rs"]
 mod problem_12_v1;
-#[path = "problems/12_highly_divisible_triangular_number/v2.rs"]
+#[path = "problems/0012_highly_divisible_triangular_number/v2.rs"]
 mod problem_12_v2;
-#[path = "problems/13_large_sum/v1.rs"]
+#[path = "problems/0013_large_sum/v1.rs"]
 mod problem_13_v1;
-#[path = "problems/14_longest_collatz_sequence/v1.rs"]
+#[path = "problems/0014_longest_collatz_sequence/v1.rs"]
 mod problem_14_v1;
-#[path = "problems/14_longest_collatz_sequence/v2.rs"]
+#[path = "problems/0014_longest_collatz_sequence/v2.rs"]
 mod problem_14_v2;
-#[path = "problems/529_10_substrings/v1.rs"]
+#[path = "problems/0529_10_substrings/v1.rs"]
 mod problem_529_v1;
-
 
 use std::env;
 use std::time::Instant;

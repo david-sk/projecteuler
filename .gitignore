@@ -1,3 +1,22 @@
 # Add any directories, files, or patterns you don't want to be tracked by version control
 
+.vscode
+
+# Internal Python stuff:
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Local environment
+.env
+.venv
+venv/
+
+# mypy (if used):
+.mypy_cache/
+
+# Rust stuff
 /target
+
+# C++ stuff
+/cpp_projecteuler
