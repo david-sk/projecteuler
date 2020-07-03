@@ -23,9 +23,7 @@
 
 
 def run():
-    index = 2
-    a, b = 1, 1
+    index, a, b = 2, 1, 1
     while len(str(b)) < 1000:
-        a, b = b, b + a
-        index += 1
+        index, a, b = index + 1, b, b + a
     print('Index: ', index)
