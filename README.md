@@ -27,7 +27,7 @@ make run-rust PROBLEM=1 VERSION=v1
 ```
 
 ```
-make run-rust PROBLEM=1 VERSION=v1
+make run-python PROBLEM=1 VERSION=v1
 ```
 
 ```
