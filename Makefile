@@ -1,4 +1,4 @@
-.PHONY: list run optimized-run
+.PHONY: list run-rust run-python run-cpp optimized-run-rust optimized-run-cpp
 
 .DEFAULT_GOAL := list
 
@@ -9,28 +9,17 @@ list:
 	# Listing of available make targets
 	@(grep -oe '^[[:lower:][:digit:]_\-]\{1,\}:' Makefile | tr -d ':' | uniq)
 
-run:
-ifeq ($(suffix $(FILE)),.rs)
-	cargo run $(PROBLEM) $(basename $(FILE))
-else
-ifeq ($(suffix $(FILE)),.py)
-	python3 -m src $(PROBLEM) $(basename $(FILE))
-else
-ifeq ($(suffix $(FILE)),.cpp)
-	g++ src/main.cpp -o cpp_projecteuler && ./cpp_projecteuler $(PROBLEM) $(basename $(FILE))
-else
-	@(echo "/!\ Unsupported problem file /!\")
-endif
-endif
-endif
+run-rust:
+	cargo run $(PROBLEM) $(VERSION)
 
-optimized-run:
-ifeq ($(suffix $(FILE)),.rs)
-	cargo build --release && ./target/release/projecteuler $(PROBLEM) $(basename $(FILE))
-else
-ifeq ($(suffix $(FILE)),.cpp)
-	g++ src/main.cpp -o cpp_projecteuler -O2 && ./cpp_projecteuler $(PROBLEM) $(basename $(FILE))
-else
-	@(echo "/!\ Unsupported problem file for optimized run /!\")
-endif
-endif
+run-python:
+	python3 -m src $(PROBLEM) $(VERSION)
+
+run-cpp:
+	g++ src/main.cpp -o cpp_projecteuler && ./cpp_projecteuler $(PROBLEM) $(VERSION)
+
+optimized-run-rust:
+	cargo build --release && ./target/release/projecteuler $(PROBLEM) $(VERSION)
+
+optimized-run-cpp:
+	g++ src/main.cpp -o cpp_projecteuler -O2 && ./cpp_projecteuler $(PROBLEM) $(VERSION)

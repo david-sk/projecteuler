@@ -20,14 +20,26 @@ Compiler g++ is often pre-installed on operating systems. But if any issue, Goog
 
 ## Usage
 
-Run a problem by specifying its number (e.g., 1) and its file (e.g., v1.rs):
+Run a problem by specifying its number (e.g., 1) and its version (filename without extention, e.g.: v1):
 
 ```
-make run PROBLEM=1 FILE=v1.rs
+make run-rust PROBLEM=1 VERSION=v1
+```
+
+```
+make run-rust PROBLEM=1 VERSION=v1
+```
+
+```
+make run-cpp PROBLEM=1 VERSION=v1
 ```
 
 If supported, optimized runs are also available with:
 
 ```
-make optimized-run PROBLEM=1 FILE=v1.rs
+make optimized-run-rust PROBLEM=1 VERSION=v1
+```
+
+```
+make optimized-run-cpp PROBLEM=1 VERSION=v1
 ```
