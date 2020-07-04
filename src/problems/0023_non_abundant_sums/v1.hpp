@@ -20,13 +20,11 @@
 #include <iostream>
 #include <vector>
 
-using namespace std;
-
 namespace Problem_23_V1 {
 
-int getProperDivisorsSum(int n) {
-    int sum = 1;
-    for (int i = 2; i <= sqrt(n); i++) {
+unsigned int getProperDivisorsSum(unsigned int n) {
+    unsigned int sum = 1;
+    for (unsigned int i = 2; i <= sqrt(n); i++) {
         if (n % i == 0) {
             sum += i + (i * i != n ? n / i : 0);
         }
@@ -35,24 +33,24 @@ int getProperDivisorsSum(int n) {
 }
 
 void run() {
-    int limit = 28123;
+    unsigned int limit = 28123;
 
-    std::vector<int> abundantNumbers;
-    for (int i = 1; i < limit; i++) {
+    std::vector<unsigned int> abundantNumbers(limit);
+    for (unsigned int i = 1; i < limit; i++) {
         if (getProperDivisorsSum(i) > i) {
             abundantNumbers.push_back(i);
         }
     }
-    int abundantNumbersSize = abundantNumbers.size();
+    unsigned int abundantNumbersSize = abundantNumbers.size();
 
-    int nonAbundantSum = 0;
-    for (int i = 1; i < limit; i++) {
+    unsigned int nonAbundantSum = 0;
+    for (unsigned int i = 1; i < limit; i++) {
         bool isSumOfTwoAbundantNumbers = false;
-        for (int j = 0; j < abundantNumbersSize; j++) {
+        for (unsigned int j = 0; j < abundantNumbersSize; j++) {
             if (abundantNumbers.at(j) >= i) {
                 break;
             }
-            for (int k = j; k < abundantNumbersSize; k++) {
+            for (unsigned int k = j; k < abundantNumbersSize; k++) {
                 if (abundantNumbers.at(j) + abundantNumbers.at(k) == i) {
                     isSumOfTwoAbundantNumbers = true;
                     j = abundantNumbersSize;  // breaks outer loop
