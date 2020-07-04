@@ -35,7 +35,7 @@ unsigned int getProperDivisorsSum(unsigned int n) {
 void run() {
     unsigned int limit = 28123;
 
-    std::vector<unsigned int> abundantNumbers();
+    std::vector<unsigned int> abundantNumbers;
     for (unsigned int i = 1; i < limit; i++) {
         if (getProperDivisorsSum(i) > i) {
             abundantNumbers.push_back(i);
@@ -47,16 +47,16 @@ void run() {
     for (unsigned int i = 1; i < limit; i++) {
         bool isSumOfTwoAbundantNumbers = false;
         for (unsigned int j = 0; j < abundantNumbersSize; j++) {
-            if (abundantNumbers.at(j) >= i) {
+            if (abundantNumbers[j] >= i) {
                 break;
             }
             for (unsigned int k = j; k < abundantNumbersSize; k++) {
-                if (abundantNumbers.at(j) + abundantNumbers.at(k) == i) {
+                if (abundantNumbers[j] + abundantNumbers[k] == i) {
                     isSumOfTwoAbundantNumbers = true;
                     j = abundantNumbersSize;  // breaks outer loop
                     break;
                 }
-                if (abundantNumbers.at(j) + abundantNumbers.at(k) > i) {
+                if (abundantNumbers[j] + abundantNumbers[k] > i) {
                     break;
                 }
             }
