@@ -14,7 +14,7 @@
 namespace Problem_2_V1 {
 
 void run() {
-    int sum = 0, a = 1, b = 2;
+    unsigned int sum = 0, a = 1, b = 2;
     while (b < 4000000) {
         if (b % 2 == 0) {
             sum += b;
