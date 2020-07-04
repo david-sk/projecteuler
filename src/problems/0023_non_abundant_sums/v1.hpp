@@ -35,7 +35,7 @@ unsigned int getProperDivisorsSum(unsigned int n) {
 void run() {
     unsigned int limit = 28123;
 
-    std::vector<unsigned int> abundantNumbers();
+    std::vector<unsigned int> abundantNumbers;
     for (unsigned int i = 1; i < limit; i++) {
         if (getProperDivisorsSum(i) > i) {
             abundantNumbers.push_back(i);
