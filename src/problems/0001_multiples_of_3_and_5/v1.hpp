@@ -9,8 +9,6 @@
 
 #include <iostream>
 
-using namespace std;
-
 namespace Problem_1_V1 {
 
 void run() {

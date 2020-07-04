@@ -11,8 +11,6 @@
 
 #include <iostream>
 
-using namespace std;
-
 namespace Problem_2_V1 {
 
 void run() {
