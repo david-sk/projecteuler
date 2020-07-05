@@ -6,8 +6,6 @@
 #include "problems/0002_even_fibonacci_numbers/v1.hpp"
 #include "problems/0023_non_abundant_sums/v1.hpp"
 
-using namespace std;
-
 void displayUsage() {
     std::cout << "\nUsage: ./cpp_projecteuler [problem number] [filename (without extension)]"
               << std::endl;
@@ -23,8 +21,8 @@ int main(int argc, char *argv[]) {
         return -1;
     }
 
-    string problemNumber = std::string(argv[1]);
-    string problemVersion = std::string(argv[2]);
+    std::string problemNumber = std::string(argv[1]);
+    std::string problemVersion = std::string(argv[2]);
 
     std::cout << "--------------------------------------------------------------\n"
               << std::endl;
