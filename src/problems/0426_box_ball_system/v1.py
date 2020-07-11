@@ -19,6 +19,9 @@ def next_turn(row):
         row[cell_index], row[next_index] = row[next_index], row[cell_index]
         moved_cell_indexes.add(next_index)
 
+    # reducing memomry consuption
+    row = row[next(i for i, row in enumerate(row) if row) :]
+
 
 def is_final_turn(row):
     previous_num_occupied_boxes = 0
