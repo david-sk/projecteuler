@@ -41,8 +41,8 @@ bool is_bouncy(unsigned long n) {
 
 void run() {
     unsigned long n = 0, num_bouncy = 0;
-    const float wanted_percentage = 99;
-    float percentage = 0;
+    const unsigned int wanted_percentage = 99;
+    unsigned int percentage = 0;
 
     while (percentage < wanted_percentage) {
         n++;
