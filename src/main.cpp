@@ -6,6 +6,7 @@
 #include "problems/0002_even_fibonacci_numbers/v1.hpp"
 #include "problems/0023_non_abundant_sums/v1.hpp"
 #include "problems/0092_square_digit_chains/v1.hpp"
+#include "problems/0112_bouncy_numbers/v1.hpp"
 
 void displayUsage() {
     std::cout << "\nUsage: ./cpp_projecteuler [problem number] [filename (without extension)]"
@@ -38,6 +39,8 @@ int main(int argc, char *argv[]) {
         Problem_23_V1::run();
     } else if (problemNumber == "92" && problemVersion == "v1") {
         Problem_92_V1::run();
+    } else if (problemNumber == "112" && problemVersion == "v1") {
+        Problem_112_V1::run();
     } else {
         displayUsage();
     }
