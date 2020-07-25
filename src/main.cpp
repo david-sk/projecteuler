@@ -7,6 +7,7 @@
 #include "problems/0023_non_abundant_sums/v1.hpp"
 #include "problems/0092_square_digit_chains/v1.hpp"
 #include "problems/0112_bouncy_numbers/v1.hpp"
+#include "problems/0119_digit_power_sum/v1.hpp"
 #include "problems/0145_reversible_numbers/v1.hpp"
 
 void displayUsage() {
@@ -42,6 +43,8 @@ int main(int argc, char *argv[]) {
         Problem_92_V1::run();
     } else if (problemNumber == "112" && problemVersion == "v1") {
         Problem_112_V1::run();
+    } else if (problemNumber == "119" && problemVersion == "v1") {
+        Problem_119_V1::run();
     } else if (problemNumber == "145" && problemVersion == "v1") {
         Problem_145_V1::run();
     } else {
