@@ -16,10 +16,10 @@ run-python:
 	python3 -m src $(PROBLEM) $(VERSION)
 
 run-cpp:
-	g++ src/main.cpp -o cpp_projecteuler && ./cpp_projecteuler $(PROBLEM) $(VERSION)
+	g++ src/main.cpp -o cpp_projecteuler -std=c++2a && ./cpp_projecteuler $(PROBLEM) $(VERSION)
 
 optimized-run-rust:
 	cargo build --release && ./target/release/projecteuler $(PROBLEM) $(VERSION)
 
 optimized-run-cpp:
-	g++ src/main.cpp -o cpp_projecteuler -O2 && ./cpp_projecteuler $(PROBLEM) $(VERSION)
+	g++ src/main.cpp -o cpp_projecteuler -O2 -std=c++2a && ./cpp_projecteuler $(PROBLEM) $(VERSION)

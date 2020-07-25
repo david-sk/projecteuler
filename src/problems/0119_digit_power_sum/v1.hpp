@@ -51,7 +51,7 @@ bool is_digit_power_sum(unsigned long long n) {
         }
     }
     std::cout << "Power sums table limit reached, should not happen!" << std::endl;
-    exit(1);
+    exit(EXIT_FAILURE);
 }
 
 void run() {
@@ -61,11 +61,9 @@ void run() {
     unsigned int num_found_digit_power_sum = 0;
     unsigned long long n = 9;  // initialize at 9 to start looking for n >= 10 as next value
 
-    std::set<unsigned long long>::iterator iter;
-
     while (num_found_digit_power_sum < limit) {
         unsigned long long next_n = 0;
-        for (iter = power_sums_set.begin(); iter != power_sums_set.end(); iter++) {
+        for (auto iter = power_sums_set.begin(); iter != power_sums_set.end(); iter++) {
             if (*iter > n && (next_n == 0 || next_n > *iter)) {
                 next_n = *iter;
             }
@@ -74,7 +72,7 @@ void run() {
             n = next_n;
         } else {
             std::cout << "Could not find next value for `n`, should not happen!" << std::endl;
-            exit(1);
+            exit(EXIT_FAILURE);
         }
         if (is_digit_power_sum(n)) {
             num_found_digit_power_sum++;
