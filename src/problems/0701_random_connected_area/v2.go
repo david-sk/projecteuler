@@ -8,6 +8,7 @@
 package main
 
 import (
+	"fmt"
 	"math/rand"
 	"time"
 )
@@ -100,9 +101,9 @@ func (r *Rect) randomizeCells() {
 func (r *Rect) display() {
 	for i := 0; i < r.Width; i++ {
 		for j := 0; j < r.Height; j++ {
-			print(r.Cells[i][j], " ")
+			fmt.Print(r.Cells[i][j], " ")
 		}
-		println()
+		fmt.Println()
 	}
 }
 
@@ -119,12 +120,13 @@ func try5by5() {
 		Width:  len(cells[0]),
 		Height: len(cells),
 	}
+	fmt.Println("try5by5 result:")
 	rect.display()
-	println("- - - -")
-	println(rect.findArea())
-	println("- - - -")
+	fmt.Println("- - - -")
+	fmt.Println(rect.findArea())
+	fmt.Println("- - - -")
 	rect.display()
-	println("------------------")
+	fmt.Println("------------------")
 }
 
 func tryRandom2by2() {
@@ -146,11 +148,42 @@ func tryRandom2by2() {
 		rect.randomizeCells()
 		maxAreaSum += rect.findArea()
 	}
-	println("tryRandom2by2 result:")
-	println(float64(maxAreaSum) / float64(numPossibilities))
+	fmt.Println("tryRandom2by2 result:")
+	fmt.Println(float64(maxAreaSum) / float64(numPossibilities))
+	fmt.Println("------------------")
+}
+
+func tryRandom7by7() {
+	rand.Seed(time.Now().UnixNano())
+
+	cells := [][]int{
+		{0, 0, 0, 0, 0, 0, 0},
+		{0, 0, 0, 0, 0, 0, 0},
+		{0, 0, 0, 0, 0, 0, 0},
+		{0, 0, 0, 0, 0, 0, 0},
+		{0, 0, 0, 0, 0, 0, 0},
+		{0, 0, 0, 0, 0, 0, 0},
+		{0, 0, 0, 0, 0, 0, 0},
+	}
+	rect := Rect{
+		Cells:  cells,
+		Width:  len(cells[0]),
+		Height: len(cells),
+	}
+
+	numPossibilities := 1000000
+	maxAreaSum := 0
+	for i := 0; i < numPossibilities; i++ {
+		rect.randomizeCells()
+		maxAreaSum += rect.findArea()
+	}
+	fmt.Println("tryRandom7by7 result:")
+	fmt.Println(fmt.Sprintf("%.8f", float64(maxAreaSum)/float64(numPossibilities)))
+	fmt.Println("------------------")
 }
 
 func main() {
 	try5by5()
 	tryRandom2by2()
+	tryRandom7by7()
 }
