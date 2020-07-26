@@ -18,6 +18,10 @@ Project Euler website: <https://projecteuler.net>
 
 Compiler g++ is often pre-installed on operating systems. But if any issue, Google how to do it :)
 
+- If using Go, install it! Version 1.14 or above is recommended.
+
+<https://golang.org/dl/>
+
 ## Usage
 
 Run a problem by specifying its number (e.g., 1) and its version (filename without extention, e.g.: v1):
@@ -42,4 +46,10 @@ make optimized-run-rust PROBLEM=1 VERSION=v1
 
 ```
 make optimized-run-cpp PROBLEM=1 VERSION=v1
+```
+
+For GoLang, no main file has been created at the moment (ever?), so just use:
+
+```
+go run src/problems/[folder]/[file].go
 ```
