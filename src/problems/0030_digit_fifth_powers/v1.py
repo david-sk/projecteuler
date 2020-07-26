@@ -24,5 +24,5 @@ def get_digits_power_sum(n):
 def run():
     # Why 1000000? No idea, just put something there, and it gives the correct answer...
     # That is soooo cheating :D
-    result = sum(n for n in range(3, 1000000) if n == get_digits_power_sum(n))
+    result = sum(n for n in range(2, 1000000) if n == get_digits_power_sum(n))
     print('Result:', result)
