@@ -1,6 +1,6 @@
 # Project Euler
 
-Solving Project Euler problems in various programming languages such as Rust, C++, or Python!
+Solving Project Euler problems in various programming languages such as Rust, C++, Go, or Python!
 
 Project Euler website: <https://projecteuler.net>
 
