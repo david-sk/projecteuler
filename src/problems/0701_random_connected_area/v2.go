@@ -153,6 +153,32 @@ func tryRandom2by2() {
 	fmt.Println("------------------")
 }
 
+func tryRandom4by4() {
+	rand.Seed(time.Now().UnixNano())
+
+	cells := [][]int{
+		{0, 0, 0, 0},
+		{0, 0, 0, 0},
+		{0, 0, 0, 0},
+		{0, 0, 0, 0},
+	}
+	rect := Rect{
+		Cells:  cells,
+		Width:  len(cells[0]),
+		Height: len(cells),
+	}
+
+	numPossibilities := 10000000
+	maxAreaSum := 0
+	for i := 0; i < numPossibilities; i++ {
+		rect.randomizeCells()
+		maxAreaSum += rect.findArea()
+	}
+	fmt.Println("tryRandom4by4 result:")
+	fmt.Println(fmt.Sprintf("%.8f", float64(maxAreaSum)/float64(numPossibilities)))
+	fmt.Println("------------------")
+}
+
 func tryRandom7by7() {
 	rand.Seed(time.Now().UnixNano())
 
@@ -185,5 +211,6 @@ func tryRandom7by7() {
 func main() {
 	try5by5()
 	tryRandom2by2()
+	tryRandom4by4()
 	tryRandom7by7()
 }
