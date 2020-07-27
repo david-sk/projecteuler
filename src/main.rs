@@ -39,6 +39,10 @@ mod problem_13_v1;
 mod problem_14_v1;
 #[path = "problems/0014_longest_collatz_sequence/v2.rs"]
 mod problem_14_v2;
+
+#[path = "problems/0055_lychrel_numbers/v1.rs"]
+mod problem_55_v1;
+
 #[path = "problems/0529_10_substrings/v1.rs"]
 mod problem_529_v1;
 
@@ -78,6 +82,7 @@ fn main() {
         ("13", "v1") => problem_13_v1::run(),
         ("14", "v1") => problem_14_v1::run(),
         ("14", "v2") => problem_14_v2::run(),
+        ("55", "v1") => problem_55_v1::run(),
         ("529", "v1") => problem_529_v1::run(),
         _ => display_usage(),
     }
