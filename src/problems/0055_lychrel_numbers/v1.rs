@@ -23,7 +23,7 @@
 //
 
 // NOTE: this returns the reverse value of `n`, and also whether `n` is palindromic
-fn get_reverse_n(mut n: i128) -> (i128, bool) {
+fn get_reverse_n(mut n: u64) -> (u64, bool) {
     let mut reverse_n = 0;
     let mut digits = vec![];
     while n > 0 {
@@ -41,7 +41,7 @@ fn get_reverse_n(mut n: i128) -> (i128, bool) {
     return (reverse_n, true);
 }
 
-fn is_lychrel(mut n: i128) -> bool {
+fn is_lychrel(mut n: u64) -> bool {
     for i in 0..50 {
         let (reverse_n, is_palindromic) = get_reverse_n(n);
         if i > 0 && is_palindromic {
