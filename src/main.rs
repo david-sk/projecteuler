@@ -42,6 +42,8 @@ mod problem_14_v2;
 
 #[path = "problems/0055_lychrel_numbers/v1.rs"]
 mod problem_55_v1;
+#[path = "problems/0059_xor_decryption/v1.rs"]
+mod problem_59_v1;
 
 #[path = "problems/0529_10_substrings/v1.rs"]
 mod problem_529_v1;
@@ -83,6 +85,7 @@ fn main() {
         ("14", "v1") => problem_14_v1::run(),
         ("14", "v2") => problem_14_v2::run(),
         ("55", "v1") => problem_55_v1::run(),
+        ("59", "v1") => problem_59_v1::run(),
         ("529", "v1") => problem_529_v1::run(),
         _ => display_usage(),
     }
