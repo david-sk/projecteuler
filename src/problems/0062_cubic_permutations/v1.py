@@ -8,8 +8,6 @@
 # Find the smallest cube for which exactly five permutations of its digits are cube.
 #
 
-from collections import defaultdict
-
 
 def get_sorted_digits(n):
     digits = []
@@ -26,15 +24,18 @@ def get_sorted_digits(n):
 
 
 def run():
-    digits_map = defaultdict(list)
+    digits_map = {}
     key = ''
 
     n = 1
     while True:
         key = ''.join(str(i) for i in get_sorted_digits(n ** 3))
-        digits_map[key].append(n)
-        if len(digits_map[key]) == 5:
-            break
+        if key in digits_map:
+            digits_map[key][1] += 1
+            if digits_map[key][1] == 5:
+                break
+        else:
+            digits_map[key] = [n, 1]
         n += 1
 
     print('Smallest cube:', digits_map[key][0] ** 3)
