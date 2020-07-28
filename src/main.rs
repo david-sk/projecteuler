@@ -2,6 +2,7 @@
 // Entry point. Usage is explained in `display_usage` function.
 //
 
+// 0001 to 0009 problems
 #[path = "problems/0001_multiples_of_3_and_5/v1.rs"]
 mod problem_1_v1;
 #[path = "problems/0001_multiples_of_3_and_5/v2.rs"]
@@ -25,6 +26,7 @@ mod problem_8_v1;
 #[path = "problems/0009_special_pythagorean_triplet/v1.rs"]
 mod problem_9_v1;
 
+// 00** problems
 #[path = "problems/0010_summation_of_primes/v1.rs"]
 mod problem_10_v1;
 #[path = "problems/0011_largest_product_in_a_grid/v1.rs"]
@@ -39,12 +41,14 @@ mod problem_13_v1;
 mod problem_14_v1;
 #[path = "problems/0014_longest_collatz_sequence/v2.rs"]
 mod problem_14_v2;
-
 #[path = "problems/0055_lychrel_numbers/v1.rs"]
 mod problem_55_v1;
 #[path = "problems/0059_xor_decryption/v1.rs"]
 mod problem_59_v1;
 
+// 0*** problems
+#[path = "problems/0357_prime_generating_integers/v1.rs"]
+mod problem_357_v1;
 #[path = "problems/0529_10_substrings/v1.rs"]
 mod problem_529_v1;
 
@@ -86,6 +90,7 @@ fn main() {
         ("14", "v2") => problem_14_v2::run(),
         ("55", "v1") => problem_55_v1::run(),
         ("59", "v1") => problem_59_v1::run(),
+        ("357", "v1") => problem_357_v1::run(),
         ("529", "v1") => problem_529_v1::run(),
         _ => display_usage(),
     }
