@@ -17,7 +17,7 @@ from os.path import dirname, join
 
 def get_names():
     with open(join(dirname(__file__), 'names.txt')) as f:
-        return f.read().replace('"', '').split(',')
+        return f.read().replace('\n', '').replace('"', '').split(',')
 
 
 def run():
