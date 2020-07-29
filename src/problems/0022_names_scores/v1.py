@@ -11,12 +11,14 @@
 # So, COLIN would obtain a score of 938 × 53 = 49714.
 # What is the total of all the name scores in the file?
 #
+# NOTE: names.txt file is put in this problem's folder.
+#
 
 from os.path import dirname, join
 
 
 def get_names():
-    with open(join(dirname(__file__), 'p022_names.txt')) as f:
+    with open(join(dirname(__file__), 'names.txt')) as f:
         return f.read().replace('"', '').split(',')
 
 
