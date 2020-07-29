@@ -20,10 +20,10 @@
 
 fn get_num_divisors(n: i64) -> i64 {
     let mut num_divisors = 0;
-    let sqrt = (n as f64).sqrt() as i64;
-    for i in 1..=sqrt {
+    let sqrt = (n as f64).sqrt();
+    for i in 1..=(sqrt as i64) {
         if n % i == 0 {
-            num_divisors += if i == sqrt { 1 } else { 2 };
+            num_divisors += if (i as f64) == sqrt { 1 } else { 2 };
         }
     }
     return num_divisors;
