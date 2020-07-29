@@ -47,6 +47,8 @@ mod problem_55_v1;
 mod problem_59_v1;
 
 // 0*** problems
+#[path = "problems/0179_consecutive_positive_divisors/v1.rs"]
+mod problem_179_v1;
 #[path = "problems/0206_concealed_square/v1.rs"]
 mod problem_206_v1;
 #[path = "problems/0357_prime_generating_integers/v1.rs"]
@@ -92,6 +94,7 @@ fn main() {
         ("14", "v2") => problem_14_v2::run(),
         ("55", "v1") => problem_55_v1::run(),
         ("59", "v1") => problem_59_v1::run(),
+        ("179", "v1") => problem_179_v1::run(),
         ("206", "v1") => problem_206_v1::run(),
         ("357", "v1") => problem_357_v1::run(),
         ("529", "v1") => problem_529_v1::run(),
