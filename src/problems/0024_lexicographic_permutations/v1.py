@@ -9,11 +9,9 @@
 # What is the millionth lexicographic permutation of the digits 0, 1, 2, 3, 4, 5, 6, 7, 8 and 9?
 #
 
-from itertools import permutations
+from itertools import permutations, islice
 
 
 def run():
-    perms = permutations(range(10))
-    for _ in range(999999):
-        next(perms)
-    print('Millionth lexicographic permutation: ', ''.join(str(i) for i in next(perms)))
+    permutation = ''.join(str(i) for i in next(islice(permutations(range(10)), 999999, 1000000)))
+    print('Millionth lexicographic permutation:', permutation)
