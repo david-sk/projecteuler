@@ -51,6 +51,8 @@ mod problem_59_v1;
 mod problem_179_v1;
 #[path = "problems/0206_concealed_square/v1.rs"]
 mod problem_206_v1;
+#[path = "problems/0346_strong_repunits/v1.rs"]
+mod problem_346_v1;
 #[path = "problems/0357_prime_generating_integers/v1.rs"]
 mod problem_357_v1;
 #[path = "problems/0529_10_substrings/v1.rs"]
@@ -96,6 +98,7 @@ fn main() {
         ("59", "v1") => problem_59_v1::run(),
         ("179", "v1") => problem_179_v1::run(),
         ("206", "v1") => problem_206_v1::run(),
+        ("346", "v1") => problem_346_v1::run(),
         ("357", "v1") => problem_357_v1::run(),
         ("529", "v1") => problem_529_v1::run(),
         _ => display_usage(),
