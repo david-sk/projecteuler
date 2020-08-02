@@ -7,21 +7,14 @@
 // How many such routes are there through a 20×20 grid?
 //
 
-fn lattice_paths(end: &[u64; 2], cursor: [u64; 2], counter: u64) -> u64 {
-    if (cursor[0], cursor[1]) != (end[0], end[1]) {
-        if cursor[0] == end[0] {
-            return lattice_paths(end, [cursor[0], cursor[1] + 1], counter);
-        } else if cursor[1] == end[1] {
-            return lattice_paths(end, [cursor[0] + 1, cursor[1]], counter);
-        }
-        return lattice_paths(end, [cursor[0], cursor[1] + 1], counter)
-            + lattice_paths(end, [cursor[0] + 1, cursor[1]], counter);
+fn lattice_paths((x, y): (u64, u64), (max_x, max_y): (u64, u64)) -> u64 {
+    if (x, y) == (max_x, max_y) {
+        return 1; // found path!
     }
-    return counter + 1;
+    return if x < max_x { lattice_paths((x + 1, y), (max_x, max_y)) } else { 0 } // going deeper!
+        + if y < max_y { lattice_paths((x, y + 1), (max_x, max_y)) } else { 0 };
 }
 
 pub fn run() {
-    let end: [u64; 2] = [20, 20];
-    let final_counter = lattice_paths(&end, [0, 0], 0);
-    println!("Result: {}", final_counter);
+    println!("Result: {}", lattice_paths((0, 0), (20, 20)));
 }
