@@ -43,6 +43,8 @@ mod problem_14_v1;
 mod problem_14_v2;
 #[path = "problems/0015_lattice_paths/v1.rs"]
 mod problem_15_v1;
+#[path = "problems/0018_maximum_path_sum_I/v1.rs"]
+mod problem_18_v1;
 #[path = "problems/0055_lychrel_numbers/v1.rs"]
 mod problem_55_v1;
 #[path = "problems/0059_xor_decryption/v1.rs"]
@@ -97,6 +99,7 @@ fn main() {
         ("14", "v1") => problem_14_v1::run(),
         ("14", "v2") => problem_14_v2::run(),
         ("15", "v1") => problem_15_v1::run(),
+        ("18", "v1") => problem_18_v1::run(),
         ("55", "v1") => problem_55_v1::run(),
         ("59", "v1") => problem_59_v1::run(),
         ("179", "v1") => problem_179_v1::run(),
