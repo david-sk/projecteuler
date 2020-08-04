@@ -48,9 +48,14 @@ def run():
 
     # not checking the first permutation as we know 123 is not divisible by 2 (conveninent :-P)
     while next_permutation(digits, length):
-        if digits[-1] % 2 == 1 and all(
-            (digits[i] * 100 + digits[i + 1] * 10 + digits[i + 2]) % n == 0
-            for i, n in enumerate(divisors, 1)
+        if (
+            digits[3] % 2 == 0
+            and digits[6] % 5 == 0
+            and digits[-1] % 2 == 1
+            and all(
+                (digits[i] * 100 + digits[i + 1] * 10 + digits[i + 2]) % n == 0
+                for i, n in enumerate(divisors, 1)
+            )
         ):
             pandigital_numbers_sum += sum(
                 digit * (10 ** i) for i, digit in enumerate(reversed(digits))
