@@ -50,7 +50,7 @@ def run():
     while next_permutation(digits, length):
         if (
             digits[3] % 2 == 0
-            and digits[6] % 5 == 0
+            and digits[5] in (0, 5)
             and digits[-1] % 2 == 1
             and all(
                 (digits[i] * 100 + digits[i + 1] * 10 + digits[i + 2]) % n == 0
