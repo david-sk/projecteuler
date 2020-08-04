@@ -60,13 +60,11 @@ pub fn run() {
             continue;
         }
         let mut ok = true;
-        let mut j: usize = 1;
         for i in 0..NUM_DIVISORS {
-            if (digits[j] * 100 + digits[j + 1] * 10 + digits[j + 2]) % divisors[i] != 0 {
+            if (digits[i + 1] * 100 + digits[i + 2] * 10 + digits[i + 3]) % divisors[i] != 0 {
                 ok = false;
                 break;
             }
-            j += 1;
         }
         if ok {
             let mut ten_powers = 1;
