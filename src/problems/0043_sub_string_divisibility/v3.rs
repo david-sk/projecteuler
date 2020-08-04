@@ -56,7 +56,7 @@ pub fn run() {
 
     // not checking the first permutation as we know 123 is not divisible by 2 (conveninent :-P)
     while next_permutation(&mut digits, LENGTH) {
-        if digits[3] % 2 != 0 || (digits[5] != 0 && digits[5] != 5) || digits[LENGTH - 1] % 2 != 1 {
+        if digits[3] % 2 != 0 || (digits[5] != 0 && digits[5] != 5) {
             continue;
         }
         let mut ok = true;
