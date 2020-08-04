@@ -51,7 +51,8 @@ pub fn run() {
 
     const LENGTH: usize = 10;
     let mut digits: [u64; LENGTH] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-    let divisors: [u64; 7] = [2, 3, 5, 7, 11, 13, 17];
+    const NUM_DIVISORS: usize = 7;
+    let divisors: [u64; NUM_DIVISORS] = [2, 3, 5, 7, 11, 13, 17];
 
     // not checking the first permutation as we know 123 is not divisible by 2 (conveninent :-P)
     while next_permutation(&mut digits, LENGTH) {
@@ -60,7 +61,7 @@ pub fn run() {
         }
         let mut ok = true;
         let mut j: usize = 1;
-        for i in 0..divisors.len() {
+        for i in 0..NUM_DIVISORS {
             if (digits[j] * 100 + digits[j + 1] * 10 + digits[j + 2]) % divisors[i] != 0 {
                 ok = false;
                 break;
