@@ -45,6 +45,8 @@ mod problem_14_v2;
 mod problem_15_v1;
 #[path = "problems/0018_maximum_path_sum_I/v1.rs"]
 mod problem_18_v1;
+#[path = "problems/0043_sub_string_divisibility/v3.rs"]
+mod problem_43_v3;
 #[path = "problems/0055_lychrel_numbers/v1.rs"]
 mod problem_55_v1;
 #[path = "problems/0059_xor_decryption/v1.rs"]
@@ -61,6 +63,8 @@ mod problem_346_v1;
 mod problem_357_v1;
 #[path = "problems/0529_10_substrings/v1.rs"]
 mod problem_529_v1;
+#[path = "problems/0539_odd_elimination/v1.rs"]
+mod problem_539_v1;
 
 use std::env;
 use std::time::Instant;
@@ -100,6 +104,7 @@ fn main() {
         ("14", "v2") => problem_14_v2::run(),
         ("15", "v1") => problem_15_v1::run(),
         ("18", "v1") => problem_18_v1::run(),
+        ("43", "v3") => problem_43_v3::run(),
         ("55", "v1") => problem_55_v1::run(),
         ("59", "v1") => problem_59_v1::run(),
         ("179", "v1") => problem_179_v1::run(),
@@ -107,6 +112,7 @@ fn main() {
         ("346", "v1") => problem_346_v1::run(),
         ("357", "v1") => problem_357_v1::run(),
         ("529", "v1") => problem_529_v1::run(),
+        ("539", "v1") => problem_539_v1::run(),
         _ => display_usage(),
     }
     let elapsed = now.elapsed();
