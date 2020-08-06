@@ -13,6 +13,7 @@ use std::collections::HashMap;
 pub fn run() {
     let limit = 1000;
     let mut solutions: HashMap<u64, u64> = HashMap::new();
+    let (mut max_key, mut max_value) = (0, 0);
 
     for i in 1..=limit {
         let i_square = i * i;
@@ -24,22 +25,17 @@ pub fn run() {
             let ij_square = i_square + j * j;
             for k in 1..=end {
                 if ij_square == k * k {
-                    let key = i + j + k;
+                    let (key, mut value) = (i + j + k, 1);
                     if solutions.contains_key(&key) {
-                        solutions.insert(key, solutions[&key] + 1);
-                    } else {
-                        solutions.insert(key, 1);
+                        value += solutions[&key];
+                    }
+                    solutions.insert(key, value);
+                    if value > max_value {
+                        max_key = key;
+                        max_value = value;
                     }
                 }
             }
-        }
-    }
-
-    let (mut max_key, mut max_value) = (0, 0);
-    for (key, value) in solutions {
-        if value > max_value {
-            max_key = key;
-            max_value = value;
         }
     }
 
