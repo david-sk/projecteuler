@@ -47,6 +47,8 @@ mod problem_15_v1;
 mod problem_18_v1;
 #[path = "problems/0031_coins_sum/v1.rs"]
 mod problem_31_v1;
+#[path = "problems/0039_integer_right_triangles/v1.rs"]
+mod problem_39_v1;
 #[path = "problems/0041_pandigital_prime/v1.rs"]
 mod problem_41_v1;
 #[path = "problems/0043_sub_string_divisibility/v3.rs"]
@@ -109,6 +111,7 @@ fn main() {
         ("15", "v1") => problem_15_v1::run(),
         ("18", "v1") => problem_18_v1::run(),
         ("31", "v1") => problem_31_v1::run(),
+        ("39", "v1") => problem_39_v1::run(),
         ("41", "v1") => problem_41_v1::run(),
         ("43", "v3") => problem_43_v3::run(),
         ("55", "v1") => problem_55_v1::run(),
