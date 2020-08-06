@@ -54,6 +54,9 @@ fn get_digits_as_number(digits: &mut [u64], length: usize) -> u64 {
 }
 
 fn is_digits_number_prime(digits: &mut [u64], length: usize) -> bool {
+    if length > 1 && (digits[length - 1] % 2 == 0 || digits[length - 1] == 5) {
+        return false;
+    }
     return is_prime(get_digits_as_number(digits, length));
 }
 
