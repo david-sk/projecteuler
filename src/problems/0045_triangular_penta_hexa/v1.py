@@ -16,7 +16,7 @@ def run():
     # That is soooo cheating :D
     triangle_penta_hexa = (
         set(n * (n + 1) // 2 for n in range(286, 100000))
-        & set(n * (3 * n - 1) // 2 for n in range(1, 100000))
-        & set(n * (2 * n - 1) for n in range(1, 100000))
+        & set(n * (3 * n - 1) // 2 for n in range(165, 100000))
+        & set(n * (2 * n - 1) for n in range(143, 100000))
     )
     print('Result:', triangle_penta_hexa.pop())
