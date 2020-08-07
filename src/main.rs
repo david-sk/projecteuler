@@ -53,6 +53,8 @@ mod problem_39_v1;
 mod problem_41_v1;
 #[path = "problems/0043_sub_string_divisibility/v3.rs"]
 mod problem_43_v3;
+#[path = "problems/0049_prime_permutations/v1.rs"]
+mod problem_49_v1;
 #[path = "problems/0055_lychrel_numbers/v1.rs"]
 mod problem_55_v1;
 #[path = "problems/0059_xor_decryption/v1.rs"]
@@ -114,6 +116,7 @@ fn main() {
         ("39", "v1") => problem_39_v1::run(),
         ("41", "v1") => problem_41_v1::run(),
         ("43", "v3") => problem_43_v3::run(),
+        ("49", "v1") => problem_49_v1::run(),
         ("55", "v1") => problem_55_v1::run(),
         ("59", "v1") => problem_59_v1::run(),
         ("179", "v1") => problem_179_v1::run(),
