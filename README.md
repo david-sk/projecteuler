@@ -48,6 +48,19 @@ make optimized-run-rust PROBLEM=1 VERSION=v1
 make optimized-run-cpp PROBLEM=1 VERSION=v1
 ```
 
+Shortcuts for those commands also exist using `r-[programming language extension]`.
+(`P` is for `PROBLEM`, `V` is for `VERSION`, and `V=v1` can be omitted as `v1` is the default):
+
+```
+make r-rs P=1
+make r-py P=1
+make r-cpp P=1
+
+make r-rs P=1 V=v2
+make r-py P=1 V=v2
+make r-cpp P=1 V=v2
+```
+
 For GoLang, no main file has been created at the moment (ever?), so just use:
 
 ```

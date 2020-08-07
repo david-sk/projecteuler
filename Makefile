@@ -23,3 +23,11 @@ optimized-run-rust:
 
 optimized-run-cpp:
 	g++ src/main.cpp -o cpp_projecteuler -O2 -std=c++2a && ./cpp_projecteuler $(PROBLEM) $(VERSION)
+
+r-%: LANGUAGE ?= $*
+r-%: V ?= v1
+r-%:
+	@if [ "$(LANGUAGE)" = "rs" ]; then make optimized-run-rust PROBLEM=$(P) VERSION=$(V); \
+	 elif [ "$(LANGUAGE)" = "py" ]; then make run-python PROBLEM=$(P) VERSION=$(V); \
+	 elif [ "$(LANGUAGE)" = "cpp" ]; then make optimized-run-cpp PROBLEM=$(P) VERSION=$(V); \
+	 else echo "Invalid language extension specified: $(LANGUAGE)"; fi
