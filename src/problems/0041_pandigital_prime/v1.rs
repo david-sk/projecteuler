@@ -23,7 +23,7 @@ fn next_permutation(array: &mut [u64], length: usize) -> bool {
 
     let mut j: usize = i - 1;
     let mut k: usize = length - 1;
-    while array[k] > array[j] {
+    while array[k] >= array[j] {
         k -= 1;
     }
     let tmp = array[j];

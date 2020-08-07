@@ -25,7 +25,7 @@ def next_permutation(array, length):
 
     j = i - 1
     k = length - 1
-    while array[k] < array[j]:
+    while array[k] <= array[j]:
         k -= 1
     array[j], array[k] = array[k], array[j]
 
