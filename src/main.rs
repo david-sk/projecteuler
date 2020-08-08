@@ -55,6 +55,8 @@ mod problem_32_v1;
 mod problem_33_v1;
 #[path = "problems/0035_circular_primes/v1.rs"]
 mod problem_35_v1;
+#[path = "problems/0037_truncatable_primes/v1.rs"]
+mod problem_37_v1;
 #[path = "problems/0039_integer_right_triangles/v1.rs"]
 mod problem_39_v1;
 #[path = "problems/0041_pandigital_prime/v1.rs"]
@@ -129,6 +131,7 @@ fn main() {
         ("32", "v1") => problem_32_v1::run(),
         ("33", "v1") => problem_33_v1::run(),
         ("35", "v1") => problem_35_v1::run(),
+        ("37", "v1") => problem_37_v1::run(),
         ("39", "v1") => problem_39_v1::run(),
         ("41", "v1") => problem_41_v1::run(),
         ("43", "v3") => problem_43_v3::run(),
