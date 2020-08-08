@@ -14,9 +14,9 @@
 fn is_pentagonal(possible_pentagonal: u64) -> bool {
     // We have: `n(3n−1)/2 = X` <=> `3n^2 - n - 2X = 0`, and the solutions are:
     // `n = (-1 + sqrt(1 + 24X)) / 6` ; `n = (-1 - sqrt(1 + 24X)) / 6`
-    // As `X` is positive, the second solution cannot be used, thus using the first solution here.
-    // In this function `X` is named `possible_pentagonal`, an integer, and we need to check
-    // that its solution is an integer for being pentagonal (hence the modulo operations).
+    // As `n` and `X` is positive, the second solution cannot be used, thus using the first
+    // solution here. In this function `X` is named `possible_pentagonal`, an integer, and we need
+    // to check that its solution is an integer for being pentagonal (hence the modulo operations).
     let square_value = 1 + 24 * possible_pentagonal;
     let sqrt_value_as_integer = (square_value as f64).sqrt() as u64;
     return square_value % sqrt_value_as_integer == 0 && (sqrt_value_as_integer + 1) % 6 == 0;
