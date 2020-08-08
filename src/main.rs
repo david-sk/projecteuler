@@ -45,6 +45,8 @@ mod problem_14_v2;
 mod problem_15_v1;
 #[path = "problems/0018_maximum_path_sum_I/v1.rs"]
 mod problem_18_v1;
+#[path = "problems/0027_quadratic_primes/v1.rs"]
+mod problem_27_v1;
 #[path = "problems/0031_coins_sum/v1.rs"]
 mod problem_31_v1;
 #[path = "problems/0032_pandigital_products/v1.rs"]
@@ -120,6 +122,7 @@ fn main() {
         ("14", "v2") => problem_14_v2::run(),
         ("15", "v1") => problem_15_v1::run(),
         ("18", "v1") => problem_18_v1::run(),
+        ("27", "v1") => problem_27_v1::run(),
         ("31", "v1") => problem_31_v1::run(),
         ("32", "v1") => problem_32_v1::run(),
         ("33", "v1") => problem_33_v1::run(),
