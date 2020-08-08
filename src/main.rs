@@ -61,6 +61,8 @@ mod problem_39_v1;
 mod problem_41_v1;
 #[path = "problems/0043_sub_string_divisibility/v3.rs"]
 mod problem_43_v3;
+#[path = "problems/0044_pentagon_numbers/v1.rs"]
+mod problem_44_v1;
 #[path = "problems/0049_prime_permutations/v1.rs"]
 mod problem_49_v1;
 #[path = "problems/0050_consecutive_prime_sum/v1.rs"]
@@ -130,6 +132,7 @@ fn main() {
         ("39", "v1") => problem_39_v1::run(),
         ("41", "v1") => problem_41_v1::run(),
         ("43", "v3") => problem_43_v3::run(),
+        ("44", "v1") => problem_44_v1::run(),
         ("49", "v1") => problem_49_v1::run(),
         ("50", "v1") => problem_50_v1::run(),
         ("55", "v1") => problem_55_v1::run(),
