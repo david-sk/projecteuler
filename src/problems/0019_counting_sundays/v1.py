@@ -34,4 +34,4 @@ def run():
         else:
             current_date += timedelta(days=1)
 
-    print('Number of sundays:', num_sundays)
+    print('Number of Sundays:', num_sundays)
