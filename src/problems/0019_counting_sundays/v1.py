@@ -27,8 +27,9 @@ def run():
     num_sundays = 0
 
     while current_date <= last_date:
-        if current_date.day == 1 and current_date.weekday() == 6:
-            num_sundays += 1
+        if current_date.day == 1:
+            if current_date.weekday() == 6:
+                num_sundays += 1
             current_date += timedelta(days=28)
         else:
             current_date += timedelta(days=1)
