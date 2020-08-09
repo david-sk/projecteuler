@@ -26,7 +26,7 @@ def run():
     last_date = date(2000, 12, 31)
     num_sundays = 0
 
-    while current_date != last_date:
+    while current_date <= last_date:
         if current_date.day == 1 and current_date.weekday() == 6:
             num_sundays += 1
         current_date += timedelta(days=1)
