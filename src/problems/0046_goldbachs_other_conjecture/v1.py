@@ -27,22 +27,25 @@ def is_prime(n):
     return True
 
 
-def generate_primes(a, b):
-    return [i for i in range(a, b + 1, 2) if is_prime(i)]
+def extend_primes(primes, chunk_amount):
+    n = primes[-1] + 2
+    i = chunk_amount
+    while i > 0:
+        if is_prime(n):
+            primes.append(n)
+            i -= 1
+        n += 2
 
 
 def find_odd_composite_without_sum():
     PRIME_CHUNK = 1000
-    primes = [2] + generate_primes(3, 3 + PRIME_CHUNK)
+    primes = [2, 3]
+    extend_primes(primes, PRIME_CHUNK)
 
     odd_composite = 9
 
     while True:
-        if primes[-1] < odd_composite:
-            from_odd_number = primes[-1] + 2
-            primes.extend(generate_primes(from_odd_number, from_odd_number + PRIME_CHUNK))
         for prime in primes:
-            # prime + 2 * n^2 == odd_composite
             n = 1
             while prime + 2 * n ** 2 < odd_composite:
                 n += 1
@@ -54,6 +57,9 @@ def find_odd_composite_without_sum():
         odd_composite += 2
         while odd_composite in primes:
             odd_composite += 2
+
+        if primes[-1] < odd_composite:
+            extend_primes(primes, PRIME_CHUNK)
 
 
 def run():
