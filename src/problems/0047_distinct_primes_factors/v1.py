@@ -1,6 +1,6 @@
 #
 # Distinct primes factors, v1
-# ttps://projecteuler.net/problem=47
+# https://projecteuler.net/problem=47
 #
 # The first two consecutive numbers to have two distinct prime factors are:
 # 14 = 2 × 7
