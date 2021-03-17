@@ -86,7 +86,7 @@ def find_shortest_passcode(digits):
     discovered.add(digits)
 
     while len(queue) > 0:
-        digits = queue.pop()
+        digits = queue.pop(0)
 
         for possibility in permutations(digits):
             possibility_as_str = ''.join(possibility)
