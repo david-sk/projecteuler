@@ -9,7 +9,7 @@
 # Given that the three characters are always asked for in order, analyse the file so as to
 # determine the shortest possible secret passcode of unknown length.
 #
-# NOTE: keylog.txt content is directly put into `ATTEMPTS`
+# The keylog.txt content is directly put into `ATTEMPTS`
 #
 
 from itertools import permutations
@@ -87,7 +87,7 @@ def try_permutations(digits, depth=0, max_depth=None):
     # NOTE: this part is not needed to find the solution given the ATTEMPTS inputs,
     # but should (hopefully) work if more than the initial amount of digits are needed
     if max_depth is None or depth < max_depth:
-        max_depth = len(digits)
+        max_depth = max_depth or len(digits)
         deep_possibility = None
         for new_digit in digits:
             possibility = try_permutations(
