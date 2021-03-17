@@ -78,26 +78,27 @@ def is_possible(passcode):
     return True
 
 
-def try_permutations(digits, depth=0, max_depth=None):
-    possibilities = permutations(digits)
-    for possibility in possibilities:
-        if is_possible(''.join(possibility)):
-            return possibility
+def find_shortest_passcode(digits):
+    queue = []
+    queue.append(digits)
 
-    # NOTE: this part is not needed to find the solution given the ATTEMPTS inputs,
-    # but should (hopefully) work if more than the initial amount of digits are needed
-    if max_depth is None or depth < max_depth:
-        max_depth = max_depth or len(digits)
-        deep_possibility = None
-        for new_digit in digits:
-            possibility = try_permutations(
-                digits + [new_digit], depth=depth + 1, max_depth=max_depth
-            )
-            if possibility and (
-                deep_possibility is None or len(possibility) < len(deep_possibility)
-            ):
-                deep_possibility = possibility
-        return deep_possibility
+    discovered = set()
+    discovered.add(''.join(digits))
+
+    while len(queue) > 0:
+        digits = queue.pop()
+
+        for possibility in permutations(digits):
+            possibility_as_str = ''.join(possibility)
+            if is_possible(possibility_as_str):
+                return possibility_as_str
+
+        for digit in digits:
+            new_digits = digits + [digit]
+            new_digits_as_str = ''.join(new_digits)
+            if new_digits_as_str not in discovered:
+                discovered.add(new_digits_as_str)
+                queue.append(new_digits)
 
     return None
 
@@ -107,6 +108,4 @@ def run():
     for attempt in ATTEMPTS:
         digits.extend([c for c in attempt if c not in digits])
 
-    possibility = try_permutations(digits)
-
-    print('Answer', ''.join(possibility))
+    print('Answer', find_shortest_passcode(digits))
