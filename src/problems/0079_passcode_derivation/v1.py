@@ -83,7 +83,7 @@ def find_shortest_passcode(digits):
     queue.append(digits)
 
     discovered = set()
-    discovered.add(''.join(digits))
+    discovered.add(digits)
 
     while len(queue) > 0:
         digits = queue.pop()
@@ -94,18 +94,17 @@ def find_shortest_passcode(digits):
                 return possibility_as_str
 
         for digit in digits:
-            new_digits = digits + [digit]
-            new_digits_as_str = ''.join(new_digits)
-            if new_digits_as_str not in discovered:
-                discovered.add(new_digits_as_str)
+            new_digits = digits + digit
+            if new_digits not in discovered:
+                discovered.add(new_digits)
                 queue.append(new_digits)
 
     return None
 
 
 def run():
-    digits = []
+    digits = ''
     for attempt in ATTEMPTS:
-        digits.extend([c for c in attempt if c not in digits])
+        digits += ''.join(c for c in attempt if c not in digits)
 
     print('Answer', find_shortest_passcode(digits))
