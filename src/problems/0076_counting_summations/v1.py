@@ -14,8 +14,8 @@
 
 
 def find_summations(n):
-    if n == 2:
-        return {(1, 1)}
+    if n <= 2:
+        return {(1, 1)} if n == 2 else set()
     summations = set()
     prev_summations = find_summations(n - 1)
     for prev_summation in prev_summations:
