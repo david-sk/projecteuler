@@ -35,9 +35,7 @@ def run():
     # Well, this algorithm version is way too slow to find the solution for 100.
     # But let's cheat! Execute this to have the 2 to 30 sequence printed in reasonable time:
 
-    sequence = ''
-    for n in range(2, 31):
-        sequence += f"{len(find_summations(n))}{', ' if n < 30 else ''}"
+    sequence = ', '.join(str(len(find_summations(n))) for n in range(2, 31))
 
     print('Sequence for 2 to 30:')
     print(sequence, '\n')
